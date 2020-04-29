@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo</title>
+    <style>
+        video{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <video src="exemplo.mp4" id="video" preload></video>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script>
+        /*JQuery*/
+        /*
+        var $video = $('#video');
+        $video.on('mouseenter focus', function(){
+            $video.get(0).play();
+        });
+        $video.on('mouseout blur', function(){
+            $video.get(0).pause();
+        });
+        */
+
+        /*Javascript*/
+        var video = document.getElementById('video')
+        video.addEventListener('mouseover', function() { 
+            video.play() 
+        }, false);
+
+        video.addEventListener('mouseout', function() { 
+            video.pause() 
+        }, false);
+    </script>
+</body>
+</html>
