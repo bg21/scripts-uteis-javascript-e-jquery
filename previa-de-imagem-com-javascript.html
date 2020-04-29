@@ -1,0 +1,19 @@
+<img src="https://www.prophix.com/wp-content/uploads/2018/02/default-person.jpg" id="img" alt="" width="200" height="200">
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" id="imagem" name="imagem">
+    <input type="submit" value="Enviar" name="acao">
+</form>
+
+<script>
+    document.getElementById("imagem").onchange = function() {previa(event)};
+    function previa(event) {
+        var reader = new FileReader();
+        
+        reader.onload = function(){
+            var img = document.getElementById('img');
+            img.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }        
+</script>
