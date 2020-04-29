@@ -1,0 +1,38 @@
+<div id="preview"></div>
+
+
+<form action="valida.php" method="post" enctype="multipart/form-data">
+    <input type="text" name="nome" placeholder="Nome">
+    <input type="file" id="file-input" multiple name="imagem[]"> 
+    <input type="submit" name="acao" value="Salvar">
+</form>
+
+<script>
+    function previewImages() {
+
+    var preview = document.querySelector('#preview');
+
+    if (this.files) {
+    [].forEach.call(this.files, readAndPreview);
+    }
+
+    function readAndPreview(file) {
+    
+    var reader = new FileReader();
+    
+    reader.addEventListener("load", function() {
+        var image = new Image();
+        image.height = 100;
+        image.title  = file.name;
+        image.src    = this.result;
+        preview.appendChild(image);
+    });
+    
+    reader.readAsDataURL(file);
+    
+    }
+
+    }
+
+    document.querySelector('#file-input').addEventListener("change", previewImages);   
+</script>
