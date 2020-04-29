@@ -1,0 +1,42 @@
+<style>
+    #custom-button{
+    padding: 8px 15px;
+    border: none;
+    background-color: #6899bd;
+    color: #EEE;
+    }
+    #custom-button:hover{
+        background-color: #80afd1;
+    }
+
+    #custom-text{
+        color: #7c7c7d;
+    }
+</style>
+    <form action="" method="post">
+        <label for="real-file" class="foto_opcional">Foto</label>
+        <input type="file" name="foto" id="real-file" hidden="hidden">
+        <button type="button" id="custom-button">Escolha um arquivo</button>
+        <span id="custom-text">Nenhum arquivo selecionado.</span>
+    </form>
+
+<script>
+    
+    const realFileBtn = document.getElementById("real-file");
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
+
+    customBtn.addEventListener("click", function() {
+        realFileBtn.click();
+    });
+
+    realFileBtn.addEventListener("change", function() {
+        if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value.match(
+            /[\/\\]([\w\d\s\.\-\(\)]+)$/
+            )[1];
+        } else {
+            customTxt.innerHTML = "Nenhum arquivo selecionado.";
+        }
+    });
+</script>
