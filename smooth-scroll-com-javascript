@@ -1,0 +1,50 @@
+<head>
+      <style>
+        #sobre{
+            background-color: red;
+            min-height: 1000px;
+        }
+
+        #servicos{
+            background-color: blue;
+            min-height: 1000px;
+        }
+
+        #contato{
+            background-color: yellow;
+            min-height: 1000px;
+        }
+      </style>
+</head>
+<nav>
+     <ul>
+         <li><a href="#sobre">Sobre</a></li>
+         <li><a href="#servicos">Serviços</a></li>
+         <li><a href="#contato">Contato</a></li>
+         <li><a target="_blank" rel="noopener noreferrer" href="https://www.mundodaprogramacao.com.br/blog/">Blog</a></li>
+     </ul>
+</nav>
+
+<section id="sobre">
+   <h2>Sobre</h2>
+</section>
+
+<section id="servicos">
+   <h2>Serviços</h2>
+</section>
+
+<section id="contato">
+   <h2>Contato</h2>
+</section>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth', //(Opcional) Utilize: "auto" ou "smooth".
+                block: 'start' 
+            });
+        });
+    });
+</script>
