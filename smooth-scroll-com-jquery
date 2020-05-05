@@ -1,0 +1,53 @@
+<head>
+    <style>
+        #sobre{
+            background-color: red;
+            min-height: 1000px;
+        }
+        #servicos{
+            background-color: blue;
+            min-height: 1000px;
+        }
+        #contato{
+            background-color: yellow;
+            min-height: 1000px;
+        }
+    </style>
+</head>
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="sobre">
+        Duis blandit maximus elit eget malesuada. Aliquam felis dui, condimentum ut tellus ac, ullamcorper tempor leo. Praesent faucibus mi eget neque mattis, sit amet egestas nisl laoreet. In dictum bibendum turpis nec efficitur. Ut consectetur, purus at rhoncus congue, risus dui elementum eros, id ornare ante urna id quam. Donec porta quis velit vitae ornare. Curabitur sed nulla sit amet diam fermentum vulputate congue quis diam.
+
+        Proin cursus massa sit amet quam lobortis laoreet. Duis facilisis tortor a hendrerit lobortis. Fusce suscipit dapibus commodo. Nulla et finibus lectus. Etiam lacinia, nulla ut porta lacinia, enim eros suscipit quam, nec ultrices enim dolor volutpat nisi. Cras semper nisl sit amet tempus lacinia. Etiam et odio sagittis, vestibulum massa mollis, vestibulum metus. Suspendisse diam mauris, vulputate et ante elementum, dapibus tempus risus. Duis commodo condimentum fermentum. Quisque ultricies ornare rhoncus. Phasellus ultricies nisl non augue cursus sollicitudin.
+    </section>
+    <section id="servicos">
+        Suspendisse in enim eu leo semper volutpat. Nam imperdiet feugiat tortor nec elementum. Sed scelerisque enim ac mattis sagittis. Ut tortor turpis, fringilla vitae nunc vel, posuere sodales enim.
+
+        Nullam blandit risus justo, eget cursus nunc tempor faucibus. Ut bibendum, augue non pulvinar pellentesque, ex ligula interdum metus, dignissim venenatis lacus enim id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam a libero enim. Mauris id eros convallis, sollicitudin mi vitae, lacinia enim. Ut mattis est bibendum aliquam lacinia. In varius nisi massa, at vulputate sapien egestas quis.
+    </section>
+    <section id="contato">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget magna odio. Sed egestas, quam nec auctor bibendum, nisi turpis dapibus quam, ut dignissim lacus ipsum at dolor. Etiam rutrum luctus neque quis tempor. Sed purus nibh, ullamcorper id magna a, semper aliquet ante. Donec rhoncus metus erat, et fermentum tellus imperdiet ut. Morbi et dignissim orci, quis maximus orci. Ut euismod arcu sed enim accumsan porttitor sed a nibh. Pellentesque consequat porta cursus.
+
+        Aliquam erat volutpat. Integer ac erat elementum, bibendum risus ut, tempor enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+    </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('nav ul li a').click(function(event) {
+            event.preventDefault(); //Prevenir o comportamento padrão
+            var href = $(this).attr('href'); //Pegando o atributo href
+            var offSetTop = $(href).offset().top; //Para obter o deslocamento do elemento com base no elemento que queremos ir (#)
+            $('html, body').animate({ //animando
+                'scrollTop': offSetTop //scrollTop é uma propriedade pra animar o scroll e como valor está recebendo o elemento que foi deslocado pelo scroll na página
+            }, 'slow'); //rolagem lenta ou o padrão ''
+        });
+    });
+</script>
